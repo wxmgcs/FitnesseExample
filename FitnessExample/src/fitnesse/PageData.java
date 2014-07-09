@@ -1,30 +1,48 @@
 package fitnesse;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PageData {
+	
+	private String content;
+	private Map<String, String> attributes = new HashMap<> ();
+	private WikiPage wikiPage;
+	
+	public PageData (String content, Map<String, String> attributes) {
+		this.content = content;
+		this.attributes = attributes;
+		this.wikiPage = new WikiPage();
+	}
 
 	public WikiPage getWikiPage() {
-		// TODO Auto-generated method stub
-		return null;
+		return wikiPage;
 	}
 
-	public boolean hasAttribute(String string) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean hasAttribute (String string) {
+		return attributes.containsKey(string);
 	}
+	
+	// Getters & Setters
 
 	public String getContent() {
-		// TODO Auto-generated method stub
-		return null;
+		return content;
 	}
 
 	public void setContent(String string) {
-		// TODO Auto-generated method stub
-		
+		content = string;
 	}
 
 	public String getHtml() {
-		// TODO Auto-generated method stub
-		return null;
+		return content;
+	}
+
+	public Map<String, String> getAttributes() {
+		return attributes;
+	}
+
+	public void setAttributes(Map<String, String> attributes) {
+		this.attributes = attributes;
 	}
 
 }

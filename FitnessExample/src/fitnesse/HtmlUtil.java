@@ -38,6 +38,7 @@ public class HtmlUtil {
 			}
 		}
 		pageData.setContent(buffer.toString());
+		System.out.println(pageData.getHtml());
 		return pageData.getHtml();
 	}
 
